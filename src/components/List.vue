@@ -32,17 +32,17 @@ type Datum = {
 const goDetail = (item: Datum) => {
   //传递参数有两种方式，params方式已经被弃用了，可以使用pinia方法进行使用
   // query
-//   router.push({
-//     path: '/details',
-//     query: item
-//   })
-// params 动态路由
-router.push({
-    name: 'Details',
-    params: {
-        id:item.id
-    }
+  router.push({
+    path: '/details',
+    query: item
   })
+// params 动态路由
+// router.push({
+//     name: 'Details',
+//     params: {
+//         id:item.id
+//     }
+//   })
 
 
 }

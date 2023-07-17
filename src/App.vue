@@ -17,10 +17,14 @@
     <button @click="pre()" >后退</button>
 
     <hr />
-
+    <h2>路由命名 类似slot</h2>
+    <button @click="goRoute('/menu')" >跳转到菜单</button>
+    <button @click="goRoute('/content')" >跳转到内容</button>
+    <!-- <router-view name="b"></router-view> -->
+    <router-view name="a"></router-view>
     <router-view></router-view>
     <hr>
-    
+
   </div>
 </template> 
 
