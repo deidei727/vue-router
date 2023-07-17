@@ -22,9 +22,6 @@ let route = useRoute()
 const findData =data.find((item)=>{
    return  item.id===Number(route.params.id)
 })
-console.log(findData)
-
-console.log(route.params.id)
 </script>
 
 <style scoped>

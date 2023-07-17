@@ -17,7 +17,10 @@
     <button @click="pre()" >后退</button>
 
     <hr />
+
     <router-view></router-view>
+    <hr>
+    
   </div>
 </template> 
 
