@@ -8,6 +8,11 @@ const routes = [
     path: "/login",
     name: "Login",
     component: () => import("../components/login.vue"),
+    // 路由元信息,可以添加自定义的数据，可以使用route.meta方法进行获取元信息，或者导航路由中国使用route.matched数组
+    meta:{
+        title:'登陆',
+        requiresAuth: false 
+    }
   },
   {
     path: "/details",
