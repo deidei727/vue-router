@@ -21,6 +21,7 @@ let router = createRouter({
   },
 });
 const whiteList = ["/"];
+// 在全局前置守卫中一般进行权限处理
 router.beforeEach((to, from, next) => {
   let token = localStorage.getItem("Token");
   console.log(whiteList.includes(to.path));
@@ -35,6 +36,23 @@ router.beforeEach((to, from, next) => {
     next("/login");
   } else {
     next();
+  }
+});
+
+// 全局后置守卫,没有next
+// 在全局后置守卫中一般处理页面滚动位置复位，错误处理等
+
+// 全局后置守卫应用：页面滚动位置复位示例
+router.afterEach((to, from) => {
+  if (to.hash) {
+    const target = document.querySelector(to.hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth" });
+      }, 500);
+    }
+  } else {
+    window.scrollTo(0, 0);
   }
 });
 

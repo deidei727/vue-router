@@ -7,8 +7,8 @@
       :rules="rules"
       class="demo-ruleForm"
     >
-    <el-form-item label="账户" prop="age">
-        <el-input v-model.number="ruleForm.age" />
+    <el-form-item label="账户" prop="username">
+        <el-input v-model="ruleForm.username" />
       </el-form-item>
       <el-form-item label="密码" prop="pass">
         <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
@@ -54,12 +54,14 @@ const ruleForm = reactive({
   username: '',
 })
 
+
 const rules = reactive<FormRules<typeof ruleForm>>({
   pass: [{ validator: validatePass, trigger: 'blur' }],
   username: [{ validator: validateUsername, trigger: 'blur' }],
 })
 
 const submitForm = (formEl: FormInstance | undefined) => {
+    console.log(ruleForm)
   if (!formEl) return
   formEl.validate(valid => {
     if (valid) {
