@@ -2,6 +2,7 @@ const routes = [
   {
     path: "/",
     component: () => import("../components/Home.vue"),
+    // redirect:'/login',
   },
   {
     path: "/succeed",

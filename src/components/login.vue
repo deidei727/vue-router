@@ -43,9 +43,7 @@ const validatePass = (rule: any, value: any, callback: any) => {
 }
 const validateUsername = (rule: any, value: any, callback: any) => {
   if (value === '') {
-    callback(new Error('Please input the password again'))
-  } else if (value !== ruleForm.pass) {
-    callback(new Error("Two inputs don't match!"))
+    callback(new Error('Please input the username again'))
   } else {
     callback()
   }
@@ -66,12 +64,14 @@ const submitForm = (formEl: FormInstance | undefined) => {
   formEl.validate(valid => {
     if (valid) {
       router.push('/succeed')
+      localStorage.setItem('Token','admin')
     } else {
       console.log('error submit!')
       return false
     }
   })
 }
+
 </script>
 <style scoped lang="scss">
 .login {
